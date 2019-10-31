@@ -17,6 +17,10 @@ describe 'github::default' do
     end
   end
 
+    it 'should run apt-get update' do
+      expect(chef_run).to update_apt_update 'update_source'
+    end
+
     it 'should install python from package' do
       expect(chef_run).to install_package 'python'
     end
@@ -25,16 +29,16 @@ describe 'github::default' do
       expect(chef_run).to run execute ('install requests==2.3.0')
     end
 
-    it 'should install nginx' do
-      expect(chef_run).to install_package 'nginx'
-    end
-
-    it 'enables the nginx service' do
-      expect(chef_run).to start_service 'nginx'
-    end
-
-    it 'starts the nginx service' do
-      expect(chef_run).to start_service 'nginx'
-    end
+    # it 'should install nginx' do
+    #   expect(chef_run).to install_package 'nginx'
+    # end
+    #
+    # it 'enables the nginx service' do
+    #   expect(chef_run).to start_service 'nginx'
+    # end
+    #
+    # it 'starts the nginx service' do
+    #   expect(chef_run).to start_service 'nginx'
+    # end
 
   end

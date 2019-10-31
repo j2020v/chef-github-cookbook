@@ -10,6 +10,20 @@ unless os.windows?
   end
 end
 
+  describe package "python" do
+    it { should be_installed }
+  end
+
+  describe package "python-pip" do
+    it { should be_installed }
+  end
+
+  describe pip('requests') do
+    it { should be_installed }
+    its('version') { should eq '2.3.0' }
+  end
+
+
 # This is an example test, replace it with your own test.
 describe port(80), :skip do
   it { should_not be_listening }
