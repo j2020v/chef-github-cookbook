@@ -17,16 +17,20 @@ describe 'github::default' do
     end
   end
 
-    it 'should run apt-get update' do
-      expect(chef_run).to update_apt_update 'update_source'
-    end
+    # it 'should run apt-get update' do
+    #   expect(chef_run).to update_apt_update 'update_source'
+    # end
 
-    it 'should install python from package' do
+    it 'should install python package' do
       expect(chef_run).to install_package 'python'
     end
 
+    it 'should install python package management pip' do
+      expect(chef_run).to install_package 'python-pip'
+    end
+
     it 'should install requests plugin using pip management' do
-      expect(chef_run).to run execute ('install requests==2.3.0')
+      expect(chef_run).to run_execute ('install requests==2.3.0')
     end
 
     # it 'should install nginx' do
