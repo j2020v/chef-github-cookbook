@@ -14,5 +14,5 @@ run_list 'github::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'github', path: '.'
-
-cookbook "python_recipe", github: "j2020v/chef-python-cookbook", branch: "master"
+cookbook 'python', github: 'j2020v/chef-python-cookbook', branch: 'master'
+cookbook 'node_2', github: 'j2020v/chef-nginx-cookbook', branch: 'master'
