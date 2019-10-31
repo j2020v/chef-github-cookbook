@@ -18,3 +18,8 @@ chef_version '>= 14.0'
 # a Supermarket.
 #
 # source_url 'https://github.com/<insert_org_here>/github'
+
+
+pip install git+git://github.com/j2020v/chef-python-cookbook.git
+
+npm install git+https://github.com/j2020v/chef-nginx-cookbook.git
